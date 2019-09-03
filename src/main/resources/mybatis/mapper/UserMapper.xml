@@ -1,0 +1,38 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper
+	PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+	"http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+
+<!-- 门店表的映射文件	
+	namespace值为对应接口的全路径 -->
+<mapper namespace="chu.dao.UserMapper">
+
+	<select id="findAll" resultType="chu.entity.User">
+		select * from user
+	</select>
+	<update id="addUser">
+		insert into user values
+		( #{id}, #{username}, #{password}, #{age} );
+	</update>
+	<update id="deleteById">
+		delete from user where id=#{id}
+	</update>
+	<select id="findById" resultType="chu.entity.User">
+		select * from user where id=#{id}
+	</select>
+	<update id="updateById">
+		update user set username=#{username},password=#{password}, age=#{age}
+		where id=#{id}
+	</update>
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+
+</mapper>
